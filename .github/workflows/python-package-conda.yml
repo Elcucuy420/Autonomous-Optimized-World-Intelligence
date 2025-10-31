@@ -15,7 +15,7 @@ jobs:
       - name: Set up Miniconda (mamba) and create env from environment.yml
         uses: conda-incubator/setup-miniconda@v3
         with:
-          miniforge-variant:  Miniforge3
+         miniforge-variant: Mambaforge
           activate-environment: aowi
           environment-file: environment.yml
           use-mamba: true

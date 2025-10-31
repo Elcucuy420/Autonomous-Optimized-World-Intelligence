@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Miniconda (mamba) and create env from environment.yml
+        uses: conda-incubator/setup-miniconda@v3
+        with:
+          miniforge-variant: Mambaforge
+          activate-environment: aowi
+          environment-file: environment.yml
+          use-mamba: true
+
+      - name: Verify environment
+        shell: bash -l {0}
+        run: |
+          python -V
+          python -c "import pandas, numpy, requests; print('Deps OK')"
+
+      - name: Run A.O.W.I. demo
+        shell: bash -l {0}
+        run: |
+          python core/main.py

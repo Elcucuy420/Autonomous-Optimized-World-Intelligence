@@ -31,3 +31,4 @@ jobs:
         shell: bash -l {0}
         run: |
           python core/main.py
+            # trigger new run

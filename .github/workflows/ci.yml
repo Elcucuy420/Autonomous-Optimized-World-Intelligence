@@ -29,4 +29,4 @@ jobs:
 
       - name: Run A.O.W.I. demo
         run: |
-          python core/main.py
+          python Autonomous-Optimized-World-Intelligence/core/main.py

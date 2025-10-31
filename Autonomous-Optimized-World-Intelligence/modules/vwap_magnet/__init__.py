@@ -1,0 +1,1 @@
+# Placeholder package for the VWAP Magnet strategy.

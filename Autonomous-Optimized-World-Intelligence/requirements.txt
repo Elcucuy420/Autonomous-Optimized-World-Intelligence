@@ -1,0 +1,4 @@
+# Example project dependencies
+pandas>=1.4
+numpy>=1.23
+requests>=2.31

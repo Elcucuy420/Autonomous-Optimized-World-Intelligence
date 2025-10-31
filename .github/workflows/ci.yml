@@ -27,6 +27,8 @@ jobs:
           python -V
           python -c "import pandas, numpy, requests; print('Deps OK')"
 
-      - name: Run A.O.W.I. demo
-        run: |
-          python Autonomous-Optimized-World-Intelligence/core/main.py
+      - name: Set PYTHONPATH
+      run: echo "PYTHONPATH=$(pwd)/Autonomous-Optimized-World-Intelligence:$PYTHONPATH" >> $GITHUB_ENV
+
+  - name: Run A.O.W.I. demo
+      run: python Autonomous-Optimized-World-Intelligence/core/main.py
